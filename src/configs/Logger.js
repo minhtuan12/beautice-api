@@ -2,7 +2,7 @@ import {createLogger, format, transports} from "winston";
 import {join} from "path";
 import { LOG_DIR } from "../utils/index.js";
 
-const logDirectory = path.join('/tmp', 'logs');
+const logDirectory = join('/tmp', 'logs');
 const logger = createLogger({
     transports: [
         new transports.File({
