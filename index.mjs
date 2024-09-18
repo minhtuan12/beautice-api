@@ -60,7 +60,7 @@ route(app);
 app.use(notFoundHandler);
 
 // Error handler
-// app.use(errorHandler);
+app.use(errorHandler);
 
 // Run Server
 const port = process.env.PORT || 3001;
