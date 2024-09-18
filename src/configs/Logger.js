@@ -2,6 +2,7 @@ import {createLogger, format, transports} from "winston";
 import {join} from "path";
 import { LOG_DIR } from "../utils/index.js";
 
+const logDirectory = path.join('/tmp', 'logs');
 const logger = createLogger({
     transports: [
         new transports.File({
@@ -9,7 +10,7 @@ const logger = createLogger({
                 format.timestamp({format: "YYYY-MM-DD HH:mm:ss"}),
                 format.printf((info) => `[${info.timestamp}] | ${info.message}`)
             ),
-            filename: join(LOG_DIR, "app.log"),
+            filename: join(logDirectory, 'app.log'),
         }),
         new transports.Console({
             format: format.combine(
