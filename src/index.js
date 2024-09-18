@@ -22,7 +22,7 @@ const limiter = rateLimit({
     legacyHeaders: false // X-RateLimit-* headers
 });
 const corsOptions = {
-    origin: '*',
+    origin: JSON.parse(process.env.CLIENT_DOMAINS),
     credentials: true,
 };
 const cookieOptions = {

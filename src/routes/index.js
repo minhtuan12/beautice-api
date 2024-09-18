@@ -1,5 +1,5 @@
 import authRouter from "./auth";
 
 export default function route(app) {
-    app.use("/auth", authRouter);
+    app.use("/api/public/auth", authRouter);
 }
