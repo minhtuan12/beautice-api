@@ -6,8 +6,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
 
-import {APP_ENV, db} from "./configs";
-import route from "./routes";
+import {APP_ENV, db} from "./src/configs";
+import route from "./src/routes";
 import {errorHandler, httpRequestHandler, notFoundHandler} from "@/utils/handlers";
 import {PUBLIC_DIR} from "@/utils/Constants";
 
