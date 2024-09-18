@@ -10,7 +10,7 @@ import { APP_ENV } from "./src/configs/index.js"
 import { connect } from "./src/configs/Mongodb.js";
 import route from "./src/routes/index.js";
 import { errorHandler, httpRequestHandler, notFoundHandler } from "./src/utils/handlers/index.js";
-import { PUBLIC_DIR } from "./src/utils/index.js";
+import path from 'path'
 
 // Load Environment variables
 dotenv.config();
@@ -34,7 +34,7 @@ const nodeEnv = process.env.NODE_ENV;
 // Init app
 const app = express();
 app.set("env", Object.values(APP_ENV).includes(nodeEnv) ? nodeEnv : APP_ENV.DEVELOPMENT);
-app.use("/", express.static(PUBLIC_DIR));
+app.use("/", express.static(path.resolve('./public')));
 app.use(helmet());
 app.use(limiter);
 app.use(express.urlencoded({extended: true}));
