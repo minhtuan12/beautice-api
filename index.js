@@ -6,7 +6,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
 
-import {APP_ENV, db} from "./src/configs";
+import {APP_ENV} from "./src/configs";
+import { connect } from "@/configs/Mongodb";
 import route from "./src/routes";
 import {errorHandler, httpRequestHandler, notFoundHandler} from "@/utils/handlers";
 import {PUBLIC_DIR} from "@/utils/Constants";
@@ -47,9 +48,9 @@ if (app.settings.env === APP_ENV.DEVELOPMENT) {
     app.use(httpRequestHandler);
 
     // Connect to Database
-    db.connect(true);
+    connect(true);
 } else {
-    db.connect();
+    connect();
 }
 
 // Init routes
