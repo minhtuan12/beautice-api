@@ -1,5 +1,6 @@
 import {getToken, responseSuccess} from "../../utils/index.js";
 import * as authService from "../services/AuthService.js";
+import FileUpload from "../../utils/types/FileUpload.js";
 
 export async function register(req, res) {
     const {full_name, phone, password} = req.body
