@@ -24,7 +24,6 @@ export async function me(req, res) {
 }
 
 export async function updateMe(req, res) {
-    console.log(req.file)
     if (req.body.avatar) {
         if (req.currentUser.avatar) {
             FileUpload.remove(req.currentUser.avatar);

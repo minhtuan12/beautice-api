@@ -1,7 +1,6 @@
 import fs from "fs";
 import {extension} from "mime-types";
 import path from "path";
-import { UPLOAD_DIR } from "../Constants.js";
 
 export default class FileUpload {
     constructor({originalname, mimetype, buffer}) {
@@ -24,7 +23,7 @@ export default class FileUpload {
 
     save(...paths) {
         const fileName = `${this.originalname}.${extension(this.mimetype)}`;
-        const uploadDir = path.join(UPLOAD_DIR, ...paths);
+        const uploadDir = path.resolve('./public') + '/uploads/images'
         fs.mkdirSync(uploadDir, {recursive: true});
         fs.writeFileSync(path.join(uploadDir, fileName), this.buffer);
         const filepath = path.posix.join(...paths, fileName);
@@ -33,7 +32,7 @@ export default class FileUpload {
     }
 
     static remove(filePath) {
-        filePath = path.join(UPLOAD_DIR, filePath);
+        filePath = path.resolve('./public') + '/uploads/' + filePath;
         if (fs.existsSync(filePath)) {
             fs.unlinkSync(filePath);
         }

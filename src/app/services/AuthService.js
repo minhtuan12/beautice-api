@@ -9,7 +9,6 @@ export const tokenBlockList = new NodeCache({
 });
 
 export function authToken(user_id) {
-    console.log(user_id)
     const expire_in = process.env.JWT_EXPIRES_IN;
     const token = generateToken({user_id}, expire_in);
     return {
