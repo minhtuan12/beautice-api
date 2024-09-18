@@ -1,10 +1,10 @@
-import path from "path";
+import path, { dirname } from "path";
 import short from "short-uuid";
 import {config as loadEnv} from "dotenv";
 
 loadEnv()
 
-export const SOURCE_DIR = path.dirname(path.resolve());
+export const SOURCE_DIR = path.dirname(path.resolve()) + '\\src';
 export const PUBLIC_DIR = path.join(path.dirname(SOURCE_DIR), "public");
 export const STORAGE_DIR = path.join(SOURCE_DIR, "storage");
 export const LOG_DIR = path.join(STORAGE_DIR, "logs");
