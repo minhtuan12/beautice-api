@@ -1,0 +1,17 @@
+# dependencies
+node_modules
+
+# production
+build
+
+# misc
+src/storage
+public/uploads
+
+# IDE config
+.vscode
+.idea
+src/.idea
+
+.prettierrc
+.env
