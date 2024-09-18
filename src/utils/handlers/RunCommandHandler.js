@@ -1,6 +1,6 @@
 import moment from "moment";
-import {errorLogger} from "@/configs/Logger";
-import {escapeRegExp, SOURCE_DIR} from "@/utils";
+import { errorLogger } from "../../configs/Logger";
+import { escapeRegExp, SOURCE_DIR } from "lodash";
 
 export default function runCommandHandler(fn) {
     return async function (...args) {

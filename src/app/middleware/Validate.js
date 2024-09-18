@@ -1,5 +1,5 @@
-import {JOI_DEFAULT_MESSAGE, JOI_DEFAULT_OPTIONS, responseError} from "@/utils";
-import {AsyncValidate, FileUpload} from "@/utils/types";
+import {JOI_DEFAULT_MESSAGE, JOI_DEFAULT_OPTIONS, responseError} from "../../utils";
+import {AsyncValidate, FileUpload} from "../../utils/types/FileUpload";
 import _ from "lodash";
 
 async function validate(req, field, schema) {

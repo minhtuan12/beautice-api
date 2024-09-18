@@ -7,10 +7,10 @@ import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
 
 import {APP_ENV} from "./src/configs";
-import { connect } from "@/configs/Mongodb";
+import { connect } from "./src/configs/Mongodb";
 import route from "./src/routes";
-import { errorHandler, httpRequestHandler, notFoundHandler } from "@/utils/handlers";
-import { PUBLIC_DIR } from "@/utils";
+import { errorHandler, httpRequestHandler, notFoundHandler } from "./src/utils/handlers";
+import { PUBLIC_DIR } from "./src/utils";
 
 // Load Environment variables
 dotenv.config();

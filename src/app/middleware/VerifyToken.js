@@ -1,7 +1,7 @@
 import jwt, {JsonWebTokenError, NotBeforeError, TokenExpiredError} from "jsonwebtoken";
-import {getToken, responseError} from "@/utils";
+import {getToken, responseError} from "../../utils";
 import {tokenBlockList} from "../services/AuthService";
-import {User} from "@/app/models";
+import { User } from "../models";
 
 export default async function (req, res, next) {
     try {

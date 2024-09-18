@@ -1,7 +1,7 @@
-import {getToken, responseSuccess} from "@/utils";
-import {FileUpload} from "@/utils/types";
+import {getToken, responseSuccess} from "../../utils";
+import Fil
 import * as authService from "../services/AuthService";
-import auth from "@/routes/auth";
+import auth from "../../routes/auth";
 import { log } from "winston";
 
 export async function register(req, res) {

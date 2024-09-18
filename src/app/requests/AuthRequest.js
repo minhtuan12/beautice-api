@@ -5,10 +5,10 @@ import {
     MAX_STRING_SIZE,
     VALIDATE_PASSWORD_REGEX,
     VALIDATE_PHONE_REGEX,
-} from "@/utils";
-import {AsyncValidate} from "@/utils/types";
+} from "../../utils";
+import {AsyncValidate} from "../../utils/types";
 
-import {User} from "../models";
+import { User } from "../models";
 
 export const register = {
     body: Joi.object({

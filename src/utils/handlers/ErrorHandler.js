@@ -1,5 +1,5 @@
-import {escapeRegExp, responseError, SOURCE_DIR} from "@/utils";
-import {errorLogger} from "@/configs/Logger";
+import {escapeRegExp, responseError, SOURCE_DIR} from "../Constants";
+import { errorLogger } from "../../configs/Logger";
 
 export default function errorHandler(err, req, res, next) {
     if (err instanceof Error) {

@@ -1,5 +1,4 @@
-import {responseError} from "@/utils";
-
+import { responseError } from "../Response";
 export default function (req, res) {
     return responseError(
         res,
