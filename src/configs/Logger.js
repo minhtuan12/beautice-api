@@ -33,7 +33,7 @@ export const debugLogger = createLogger({
 export const errorLogger = createLogger({
     level: "error",
     format: format.json({space: 4}),
-    transports: [new transports.File({filename: join(LOG_DIR, "exceptions.log")})],
+    transports: [new transports.File({filename: join(logDirectory, 'app.log')})],
 });
 
 export default logger;
