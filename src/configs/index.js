@@ -3,4 +3,4 @@ export const APP_ENV = {
     DEVELOPMENT: "development",
 };
 // export * as db from "./Mongodb";
-export {default as logger} from "./Logger";
+export {default as logger} from "./Logger.js";

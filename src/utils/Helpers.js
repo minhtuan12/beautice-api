@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-import {SALT_ROUNDS, VALIDATE_PASSWORD_REGEX} from "./Constants";
+import {SALT_ROUNDS, VALIDATE_PASSWORD_REGEX} from "./Constants.js";
 import NodeCache from "node-cache";
 
 export function generatePassword(password) {

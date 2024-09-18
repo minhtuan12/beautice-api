@@ -1,7 +1,7 @@
-import jwt, {JsonWebTokenError, NotBeforeError, TokenExpiredError} from "jsonwebtoken";
-import {getToken, responseError} from "../../utils";
-import {tokenBlockList} from "../services/AuthService";
-import { User } from "../models";
+import jwt from "jsonwebtoken";
+import {getToken, responseError} from "../../utils/index.js";
+import {tokenBlockList} from "../services/AuthService.js";
+import { User } from "../models/index.js";
 
 export default async function (req, res, next) {
     try {
@@ -21,10 +21,10 @@ export default async function (req, res, next) {
 
         return responseError(res, 401, "Access denied");
     } catch (error) {
-        if (error instanceof JsonWebTokenError) {
-            if (error instanceof TokenExpiredError) {
+        if (error instanceof jwt.JsonWebTokenError) {
+            if (error instanceof jwt.TokenExpiredError) {
                 return responseError(res, 401, "Auth token is expired");
-            } else if (error instanceof NotBeforeError) {
+            } else if (error instanceof jwt.NotBeforeError) {
                 return responseError(res, 401, "Auth token is not working");
             } else {
                 return responseError(res, 401, "Auth token is invalid");

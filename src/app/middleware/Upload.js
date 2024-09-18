@@ -1,6 +1,6 @@
 import multer from "multer";
-import { UUID_TRANSLATOR } from "../../utils";
-import FileUpload from "../../utils/types/FileUpload";
+import { UUID_TRANSLATOR } from "../../utils/index.js";
+import FileUpload from "../../utils/types/FileUpload.js";
 
 const defaultMulter = multer({
     storage: multer.memoryStorage(),

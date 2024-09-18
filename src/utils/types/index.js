@@ -1,2 +1,2 @@
-export {default as AsyncValidate} from "./AsyncValidate";
-export {default as FileUpload} from "./FileUpload";
+export {default as AsyncValidate} from "./AsyncValidate.js";
+export {default as FileUpload} from "./FileUpload.js";

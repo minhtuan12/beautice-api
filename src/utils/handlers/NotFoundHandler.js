@@ -1,4 +1,4 @@
-import { responseError } from "../Response";
+import { responseError } from "../Response.js";
 export default function (req, res) {
     return responseError(
         res,

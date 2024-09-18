@@ -6,11 +6,11 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import methodOverride from "method-override";
 
-import {APP_ENV} from "./src/configs";
-import { connect } from "./src/configs/Mongodb";
-import route from "./src/routes";
-import { errorHandler, httpRequestHandler, notFoundHandler } from "./src/utils/handlers";
-import { PUBLIC_DIR } from "./src/utils";
+import { APP_ENV } from "./src/configs/index.js"
+import { connect } from "./src/configs/Mongodb.js";
+import route from "./src/routes/index.js";
+import { errorHandler, httpRequestHandler, notFoundHandler } from "./src/utils/handlers/index.js";
+import { PUBLIC_DIR } from "./src/utils/index.js";
 
 // Load Environment variables
 dotenv.config();

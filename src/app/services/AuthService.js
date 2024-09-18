@@ -1,8 +1,8 @@
 import NodeCache from "node-cache";
 import moment from "moment";
 import jwt from "jsonwebtoken";
-import {User} from "../models";
-import {comparePassword, generatePassword, generateToken, responseError} from "../../utils";
+import {User} from "../models/index.js";
+import {comparePassword, generatePassword, generateToken, responseError} from "../../utils/index.js";
 
 export const tokenBlockList = new NodeCache({
     checkperiod: process.env.TIME_TO_CHECK_PERIOD,

@@ -1,6 +1,6 @@
 import moment from "moment";
-import { debugLogger } from "../../configs/Logger";
-import { contentLength, responseTime } from "../Helpers";
+import { debugLogger } from "../../configs/Logger.js";
+import { contentLength, responseTime } from "../Helpers.js";
 
 export default function httpRequestHandler(req, res, next) {
     const currentUrl = req.originalUrl || req.url;

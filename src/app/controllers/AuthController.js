@@ -1,8 +1,5 @@
-import {getToken, responseSuccess} from "../../utils";
-import Fil
-import * as authService from "../services/AuthService";
-import auth from "../../routes/auth";
-import { log } from "winston";
+import {getToken, responseSuccess} from "../../utils/index.js";
+import * as authService from "../services/AuthService.js";
 
 export async function register(req, res) {
     const {full_name, phone, password} = req.body

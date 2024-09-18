@@ -4,7 +4,7 @@ import {config as loadEnv} from "dotenv";
 
 loadEnv()
 
-export const SOURCE_DIR = path.dirname(__dirname);
+export const SOURCE_DIR = path.dirname(path.resolve());
 export const PUBLIC_DIR = path.join(path.dirname(SOURCE_DIR), "public");
 export const STORAGE_DIR = path.join(SOURCE_DIR, "storage");
 export const LOG_DIR = path.join(STORAGE_DIR, "logs");

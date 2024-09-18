@@ -1,7 +1,7 @@
 import fs from "fs";
 import {extension} from "mime-types";
 import path from "path";
-import { UPLOAD_DIR } from "../Constants";
+import { UPLOAD_DIR } from "../Constants.js";
 
 export default class FileUpload {
     constructor({originalname, mimetype, buffer}) {

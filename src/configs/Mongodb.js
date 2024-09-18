@@ -1,6 +1,6 @@
 import {config as loadEnv} from "dotenv";
 import mongoose, {set} from "mongoose";
-import logger from "./Logger";
+import logger from "./Logger.js";
 
 loadEnv();
 

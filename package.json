@@ -1,11 +1,12 @@
 {
+    "type": "module",
     "name": "expressjs-core",
     "version": "1.0.0",
     "description": "ExpressJS Core is a basic source code, using Express FrameWork",
-    "main": "index.js",
+    "main": "index.mjs",
     "scripts": {
-        "seed": "babel-node src/seeders/index.js",
-        "start": "nodemon --exec babel-node index.js",
+        "seed": "babel-node src/seeders/index.mjs",
+        "start": "nodemon --exec babel-node index.mjs",
         "build": "rm -rf build && babel src --out-dir build --copy-files"
     },
     "author": "Harry Collins",

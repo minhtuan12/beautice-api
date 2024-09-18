@@ -1,6 +1,6 @@
 import {createLogger, format, transports} from "winston";
 import {join} from "path";
-import { LOG_DIR } from "../utils";
+import { LOG_DIR } from "../utils/index.js";
 
 const logger = createLogger({
     transports: [

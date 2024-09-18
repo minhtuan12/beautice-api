@@ -1,2 +1,2 @@
-export * from "./Enum";
-export {default as User} from "./User";
+export * from "./Enum.js";
+export {default as User} from "./User.js";
