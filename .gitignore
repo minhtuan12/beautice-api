@@ -4,9 +4,6 @@ node_modules
 # production
 build
 
-# misc
-public/uploads
-
 # IDE config
 .vscode
 .idea
