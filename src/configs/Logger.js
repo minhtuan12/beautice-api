@@ -9,7 +9,7 @@ const logger = createLogger({
                 format.timestamp({format: "YYYY-MM-DD HH:mm:ss"}),
                 format.printf((info) => `[${info.timestamp}] | ${info.message}`)
             ),
-            // filename: join(LOG_DIR, "app.log"),
+            filename: join(LOG_DIR, "app.log"),
         }),
         new transports.Console({
             format: format.combine(
@@ -32,7 +32,7 @@ export const debugLogger = createLogger({
 export const errorLogger = createLogger({
     level: "error",
     format: format.json({space: 4}),
-    // transports: [new transports.File({filename: join(LOG_DIR, "exceptions.log")})],
+    transports: [new transports.File({filename: join(LOG_DIR, "exceptions.log")})],
 });
 
 export default logger;
