@@ -4,6 +4,8 @@ import { errorLogger } from "../../configs/Logger.js";
 import { responseError } from "../Response.js";
 
 export default function errorHandler(err, req, res, next) {
+    console.log(err);
+    
     if (err instanceof Error) {
         const re = new RegExp(escapeRegExp(SOURCE_DIR) + "(.*?)" + "\\)", "g");
         const stack = err.stack.match(re);
