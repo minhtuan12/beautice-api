@@ -4,7 +4,6 @@
     ],
     "plugins": [
         "@babel/plugin-transform-runtime",
-        "@babel/plugin-transform-export-namespace-from",
         [
             "module-resolver",
             {
