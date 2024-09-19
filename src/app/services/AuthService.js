@@ -51,18 +51,14 @@ export function blockToken(token) {
 }
 
 export async function profile(user_id) {
-    const user = await User.findOne({_id: user_id}).select('-password -__v');
-    if (user.avatar) {
-        user.avatar = process.env.SERVER_DOMAIN + "/uploads/" + user.avatar;
-    }
-    return user;
+    return User.findOne({_id: user_id}).select('-password -__v');
 }
 
-export async function update(currentUser, {full_name, phone, avatar}) {
+export async function update(currentUser, {full_name, phone, avatar}, newAvatarUrl = null) {
     currentUser.full_name = full_name;
     currentUser.phone = phone;
-    if (avatar) {
-        currentUser.avatar = avatar;
+    if (newAvatarUrl) {
+        currentUser.avatar = newAvatarUrl;
     }
     return await currentUser.save();
 }

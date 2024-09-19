@@ -12,3 +12,5 @@ src/.idea
 .prettierrc
 .env
 .vercel
+public
+

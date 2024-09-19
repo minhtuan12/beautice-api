@@ -1,6 +1,11 @@
 import {getToken, responseSuccess} from "../../utils/index.js";
 import * as authService from "../services/AuthService.js";
-import FileUpload from "../../utils/types/FileUpload.js";
+import {initializeApp} from "firebase/app";
+import {firebaseConfig} from "../../configs/Mongodb.js";
+import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage'
+
+initializeApp(firebaseConfig)
+const storage = getStorage()
 
 export async function register(req, res) {
     const {full_name, phone, password} = req.body
@@ -24,14 +29,17 @@ export async function me(req, res) {
 }
 
 export async function updateMe(req, res) {
+    let newAvatarUrl = null
     if (req.body.avatar) {
-        if (req.currentUser.avatar) {
-            FileUpload.remove(req.currentUser.avatar);
+        const storageRef = ref(storage, `files/${req.body.avatar.originalname}`)
+        const metadata = {
+            contentType: req.body.avatar.mimetype
         }
-        req.body.avatar = req.body.avatar.save("images");
+        const snapshot = await uploadBytesResumable(storageRef, req.body.avatar.buffer, metadata)
+        newAvatarUrl = await getDownloadURL(snapshot?.ref)
     }
 
-    await authService.update(req.currentUser, req.body);
+    await authService.update(req.currentUser, req.body, newAvatarUrl);
     return responseSuccess(res);
 }
 
